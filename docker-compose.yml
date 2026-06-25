@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: picknpay-ecommerce-db
+    environment:
+      POSTGRES_DB: ecommerce
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: picknpay-ecommerce-api
+    depends_on:
+      - postgres
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
