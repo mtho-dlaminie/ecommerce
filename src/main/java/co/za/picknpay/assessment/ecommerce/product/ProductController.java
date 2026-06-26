@@ -3,6 +3,7 @@ package co.za.picknpay.assessment.ecommerce.product;
 import co.za.picknpay.assessment.ecommerce.product.dto.CreateProductRequest;
 import co.za.picknpay.assessment.ecommerce.product.dto.ProductResponse;
 import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ProductController {
     public Page<ProductResponse> list(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String category,
-            Pageable pageable
+            @ParameterObject Pageable pageable
     ) {
         return service.list(name, category, pageable);
     }

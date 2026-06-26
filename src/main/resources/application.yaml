@@ -37,3 +37,19 @@ app:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: never
+
+info:
+  app:
+    name: Pick n Pay Ecommerce Assessment
+    version: 1.0.0
+    description: Technical assessment by Mthobisi Dlamini

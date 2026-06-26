@@ -5,7 +5,9 @@ import co.za.picknpay.assessment.ecommerce.product.dto.ProductResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductService {
 
     private final ProductRepository repository;
